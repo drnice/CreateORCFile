@@ -1,0 +1,108 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>local.apache.orc</groupId>
+  <artifactId>local.apache.orc</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>local.apache.orc</name>
+  <description>createorcfile</description>
+  
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+    <!-- Some care is needed when adding new dependencies with Hadoop.
+         There are lots of libraries on Hadoop's runtime classpath that
+         the client or core POMs don't tell you about. When adding a new
+         dependency, first check Hadoop's lib directory if it's already
+         there. If it is, use the exact same version and set the scope
+         to "provided".
+
+         If there are dependency conflicts you cannot resolve, try setting
+         the HADOOP_USER_CLASSPATH_FIRST environment variable to "true",
+         giving your libraries precedence. -->
+
+    <!-- The following libraries come with Hadoop but are missing from
+         the client POM. You need them if you want to use LocalJobRunner
+         from the IDE. If you don't you can safely delete them. -->
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.10</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+    	<groupId>org.apache.orc</groupId>
+    	<artifactId>orc-core</artifactId>
+    	<version>1.3.3</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.apache.hadoop</groupId>
+    	<artifactId>hadoop-common</artifactId>
+    	<version>2.7.3</version>
+    </dependency>
+    <dependency>
+    	<groupId>commons-logging</groupId>
+    	<artifactId>commons-logging</artifactId>
+    	<version>1.1.3</version>
+    </dependency>
+    <dependency>
+    	<groupId>commons-collections</groupId>
+    	<artifactId>commons-collections</artifactId>
+    	<version>3.2.2</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.slf4j</groupId>
+    	<artifactId>slf4j-log4j12</artifactId>
+    	<version>1.7.10</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.apache.logging.log4j</groupId>
+    	<artifactId>log4j-core</artifactId>
+    	<version>2.6.2</version>
+    </dependency>
+    <dependency>
+    	<groupId>commons-configuration</groupId>
+    	<artifactId>commons-configuration</artifactId>
+    	<version>1.6</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.apache.hadoop</groupId>
+    	<artifactId>hadoop-auth</artifactId>
+    	<version>2.7.3</version>
+    </dependency>
+    <dependency>
+    	<groupId>io.airlift</groupId>
+    	<artifactId>aircompressor</artifactId>
+    	<version>0.3</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.slf4j</groupId>
+    	<artifactId>slf4j-api</artifactId>
+    	<version>1.7.10</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.apache.hive</groupId>
+    	<artifactId>hive-storage-api</artifactId>
+    	<version>2.1.0</version>
+    </dependency>
+    <dependency>
+    	<groupId>com.google.guava</groupId>
+    	<artifactId>guava</artifactId>
+    	<version>11.0.2</version>
+    </dependency>
+    <dependency>
+    	<groupId>commons-lang</groupId>
+    	<artifactId>commons-lang</artifactId>
+    	<version>2.6</version>
+    </dependency>
+    <dependency>
+    	<groupId>com.google.protobuf</groupId>
+    	<artifactId>protobuf-java</artifactId>
+    	<version>2.6.0</version>
+    </dependency>
+  </dependencies>
+  
+  
+</project>
